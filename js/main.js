@@ -1,11 +1,9 @@
-function calculandoPeso(gravedad){
+function calculandoPeso(){
 var peso=document.getElementById("peso").value;
 var planeta=document.getElementById("planeta").value;
 
-var pesoNuevo=(peso/9.78)*gravedad;
-document.getElementById("dato").innerHTML=pesoNuevo.value;
-
-function planeta(){
+function pesoPlaneta(){
+  planeta=planeta.toLowerCase();
   if(planeta=="mercurio" || planeta=="marte"){
       var gravedad= 3.72;
     }else if(planeta=="venus"){
@@ -21,6 +19,7 @@ function planeta(){
     }else if(planeta=="neptuno"){
       var gravedad= 10.97;
     }
-  return gravedad;
+  return ((peso/9.78)*gravedad).toFixed(2);
   }
+    document.getElementById("dato").innerHTML=pesoPlaneta();
 }
